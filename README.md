@@ -1,6 +1,8 @@
 <!-- TABLE OF CONTENTS -->
 <h1 align="center">Youtube to MP3 Converter</h1>
+
  <details style="display: inline-block" pen="open">
+  <summary> Table of Contents</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
