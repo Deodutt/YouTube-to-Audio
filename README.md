@@ -10,13 +10,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -50,30 +44,35 @@ This application is a  simple way to convert Youtube videos to mp3/mp4 using API
 To get a local copy up and running follow these simple steps.
 <br/><br/>
 
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-<br/><br/>
-
-
-### Installation
-
-1. Clone the repo
+1. Clone the repository and change directories into it
    ```sh
    git clone https://github.com/Deodutt/YouTube-to-Audio.git
+   cd .\YouTube-to-Audio\
    ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-<br/><br/>
 
+2. Create a virtual environment and activate it
+   ```sh
+   py -m venv venv
+   .\venv\Scripts\activate
+   ```
+
+3. Install the required dependencies
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+4. Run the flask application
+   ```sh
+   $env:FLASK_APP = "application.py"
+   flask run
+   ```
+
+5. Go to the local callback IP on your browser
+   ```sh
+   http://127.0.0.1:5000/
+   ```
+   
+<br/><br/>
 
 
 ## Version History
