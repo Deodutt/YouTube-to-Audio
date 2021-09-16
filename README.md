@@ -71,7 +71,6 @@ This is an example of how to list things you need to use the software and how to
 
 * 0.2
     * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
 
