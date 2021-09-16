@@ -17,7 +17,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -98,16 +97,11 @@ Contributions are what make the open source community such an amazing place to l
 <br/><br/>
 
 
-## Contact
-
-[![Linkedin Badge](https://img.shields.io/badge/-Ricardo%20Deodutt-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rixardo/)](https://www.linkedin.com/in/rixardo/)   [![GitHub Badge](https://img.shields.io/badge/-Deodutt-black?style=flat-square&logo=GitHub&logoColor=white&link=https://www.github.com/Deodutt)](https://www.github.com/Deodutt)    [![Twitter Badge](https://img.shields.io/badge/-@RixardoDe-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://www.twitter.com/RixardoDe)](https://www.twitter.com/RixardoDe)
-
-Project Link: [https://github.com/Deodutt/YouTube-to-Audio](https://github.com/Deodutt/YouTube-to-Audio)
-<br/><br/>
-
-
 ## Acknowledgements
 
 - [Sai Ho Yip - Debugging](https://www.linkedin.com/in/saihoyip/)
 <br/><br/>
 
+## Contact
+
+[![Linkedin Badge](https://img.shields.io/badge/-Ricardo%20Deodutt-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rixardo/)](https://www.linkedin.com/in/rixardo/)   [![GitHub Badge](https://img.shields.io/badge/-Deodutt-black?style=flat-square&logo=GitHub&logoColor=white&link=https://www.github.com/Deodutt)](https://www.github.com/Deodutt)    [![Twitter Badge](https://img.shields.io/badge/-@RixardoDe-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://www.twitter.com/RixardoDe)](https://www.twitter.com/RixardoDe)
