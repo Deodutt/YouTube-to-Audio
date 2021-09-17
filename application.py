@@ -14,30 +14,17 @@ application = app = Flask(__name__)
 def converter():
     # Needs to be global for the /download route
     global youtube_url, youtube_id
-
     youtube_url = ""
     youtube_id = ""
-    api_converter_link = ""
 
     if request.method == "POST" and "youtube_link" in request.form:
-        # Declare all variables.
         youtube_url = str(request.form.get("youtube_link")).strip()
-
-        # print(youtube_url)
-        # https://www.youtube.com/watch?v=lUKGzvQj4bI
-
-        # Extracting the ID from youtube_link
         youtube_id = str(helper.id_grabber(youtube_url))
-        # YouTube(youtube_url).streams.first().download(filename="file_name.mp3")
-
-        # Making the IFrame link with the Youtube URL
-        # api_converter_link = "https://www.yt-download.org/api/button/mp3/" + youtube_id
 
     return render_template(
         "index.html",
         youtube_url=youtube_url,
         youtube_id=youtube_id,
-        api_converter_link=api_converter_link,
     )
 
 
@@ -49,8 +36,8 @@ def download():
             .streams.get_audio_only()
             .download(filename=f"{youtube_id}.mp3")
         )
-        # string_file_name = f"{youtube_id}.mp3"
         fname = download_path.split("//")[-1]
+
         # This sends a file from locally downloaded to the web browser to download.
         # Files are stored on /var/app/current in the EC2 instance
         return send_file(
