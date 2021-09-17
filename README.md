@@ -19,17 +19,16 @@
 </details>
 <br/>
 
-
 ## About The Project
 
-This application is a  simple way to convert Youtube videos to mp3/mp4 using API service. Get quality like 320 kbps, 256 kbps, 192 kbps, 128 kbps mp3 file format. Conversion time is mostly instant for hour long videos. 
+This application uses a simple way to convert Youtube videos to MP3 files. Get high-quality audio files such as 320kbps for any video on YouTube! Conversion time is mostly instant for hour-long videos. The purpose of this application is for educational purposes only!
 <br/><br/>
 
 
 #### Current Version
 
-<br/><br/>
-
+This current version uses an unofficial API (From https://www.yt2mp3.ws/developers/) to embed a download button onto a webpage. When on a webpage, the user will fill out a form (Enter a URL in the bar and press convert) and this will cause a POST request. Inside the code, if there is a post request and a variable called "youtube_link" it will run some code. It will get the information and strip it from white spaces. It will then call an id_grabber function that is inside the helper.py function and store that result to a variable called youtube_id. Inside the helper.py file, the program uses urllib module to parse through the URL and extract the youtube_id. It checks multiple cases of different ways users can enter a youtube URL. Once extracted, the value will be returned to the application.py file. The youtube ID is then concatenated with the provided API route. There is then a return with the render_template() function called. This function is used to generate output to an index.html file inside a templates folder based on Jinja2 engine. The passed variables are the HTML page and data values that will be used in the HMTL page.
+<br/>
 
 ### Built With
 
@@ -78,8 +77,6 @@ To get a local copy up and running follow these simple steps.
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
 * 0.1
     * Initial Release
 <br/><br/>
