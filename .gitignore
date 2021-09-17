@@ -1,5 +1,6 @@
 venv/
-README.md
 __pycache__/
 .vscode/
+README.md
 LICENSE
+*.mp3
