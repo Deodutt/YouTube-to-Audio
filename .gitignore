@@ -1,4 +1,5 @@
 venv/
-README.md/
+README.md
 __pycache__/
 .vscode/
+LICENSE
