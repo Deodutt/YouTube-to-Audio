@@ -9,6 +9,8 @@ application = app = Flask(__name__)
 @app.route("/", methods=["POST", "GET"])
 def converter():
     youtube_url = ""
+    youtube_id = ""
+    api_converter_link = ""
     if request.method == "POST" and "youtube_link" in request.form:
         # Declare all variables.
         youtube_url = str(request.form.get("youtube_link")).strip()
