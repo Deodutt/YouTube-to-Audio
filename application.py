@@ -2,8 +2,6 @@ from __future__ import unicode_literals
 from flask import Flask, request, render_template, send_file
 from werkzeug.utils import secure_filename
 import helper
-import os
-import sys
 import logging
 from pytube import YouTube
 
@@ -16,10 +14,13 @@ def converter():
     global youtube_url, youtube_id
     youtube_url = ""
     youtube_id = ""
+    video_details = []
 
     if request.method == "POST" and "youtube_link" in request.form:
         youtube_url = str(request.form.get("youtube_link")).strip()
         youtube_id = str(helper.id_grabber(youtube_url))
+
+        video_details = helper.webscrapper(youtube_url)
 
     return render_template(
         "index.html",

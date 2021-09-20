@@ -1,4 +1,6 @@
 from urllib.parse import urlparse, parse_qs
+from bs4 import BeautifulSoup
+import requests
 
 
 def id_grabber(youtube_url):
@@ -27,3 +29,35 @@ def id_grabber(youtube_url):
             youtube_id = parse_qs(query.query)["list"][0]
 
     return youtube_id
+
+
+def webscrapper(youtube_url):
+    video_details = {}
+    # print(youtube_url)
+    req = requests.get(youtube_url)
+    soup = BeautifulSoup(req.content, 'html.parser')
+
+    video_details['video_title'] = soup.find(
+        "meta", itemprop="name").attrs.get('content')
+
+    video_details['video_author'] = soup.find(
+        "link", itemprop="name").attrs.get('content')
+
+    video_details['video_views'] = soup.find(
+        "meta", itemprop="interactionCount").attrs.get('content')
+
+    video_details['video_published'] = soup.find(
+        "meta", itemprop="datePublished").attrs.get('content')
+
+    video_details['video_duration'] = soup.find(
+        "meta", itemprop="duration").attrs.get('content')
+
+    video_details['video_id'] = soup.find(
+        "meta", itemprop="videoId").attrs.get('content')
+
+    video_details['video_thumbnail'] = soup.find(
+        "link", itemprop="thumbnailUrl").attrs.get('href')
+
+    print(video_details)
+
+    return video_details
