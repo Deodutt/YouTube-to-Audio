@@ -27,7 +27,7 @@ This application uses a simple way to convert Youtube videos to MP3 files. Get h
 
 #### Current Version
 
-This current version uses an unofficial API (From https://www.yt2mp3.ws/developers/) to embed a download button onto a webpage. When on a webpage, the user will fill out a form (Enter a URL in the bar and press convert) and this will cause a POST request. Inside the code, if there is a post request and a variable called "youtube_link" it will run some code. It will get the information and strip it from white spaces. It will then call an id_grabber function that is inside the helper.py function and store that result to a variable called youtube_id. Inside the helper.py file, the program uses urllib module to parse through the URL and extract the youtube_id. It checks multiple cases of different ways users can enter a youtube URL. Once extracted, the value will be returned to the application.py file. The youtube ID is then concatenated with the provided API route. There is then a return with the render_template() function called. This function is used to generate output to an index.html file inside a templates folder based on Jinja2 engine. The passed variables are the HTML page and data values that will be used in the HMTL page.
+Release 2.0 is much simpler and safer! While making version 1 of this application, I had no issues until a week later where I found a vulnerability using the third-party API I found on another repository. This version uses pytube module to download files. Instead of using an id_grabber function, I have decided to explore web scraping. In this project, there is a web scraper function that obtains a lot of information on a YouTube video. There is also a slightly better styling. There is much more to improve so stay tuned!
 <br/>
 
 ### Built With
@@ -36,6 +36,7 @@ This current version uses an unofficial API (From https://www.yt2mp3.ws/develope
 - [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 - [HTML](https://www.w3schools.com/html/default.asp)
 - [CSS](https://www.w3schools.com/css/default.asp)
+- [Web Scraping](https://en.wikipedia.org/wiki/Web_scraping)
 <br/><br/>
 
 
@@ -50,7 +51,7 @@ To get a local copy up and running follow these simple steps.
    cd .\YouTube-to-Audio\
    ```
 
-2. Create a virtual environment and activate it
+2. Create a virtual environment and activate it. (Windows command)
    ```sh
    py -m venv venv
    .\venv\Scripts\activate
@@ -61,7 +62,7 @@ To get a local copy up and running follow these simple steps.
    pip install -r requirements.txt
    ```
 
-4. Run the flask application
+4. Run the flask application (in powershell)
    ```sh
    $env:FLASK_APP = "application.py"
    flask run
@@ -76,9 +77,10 @@ To get a local copy up and running follow these simple steps.
 
 
 ## Version History
-
-* 0.1
-    * Initial Release
+* 2.0
+    * Stable and more secure version with pytube module to download videos. Uses web scrapping BS4 to obtain youtube video information
+* 1.0
+    * Initial Release with third party API
 <br/><br/>
 
 
@@ -96,7 +98,7 @@ Contributions are what make the open source community such an amazing place to l
 
 ## Acknowledgements
 
-- [Sai Ho Yip - Debugging](https://www.linkedin.com/in/saihoyip/)
+- [Sai Ho Yip - Troubleshooting & Advice](https://www.linkedin.com/in/saihoyip/)
 <br/><br/>
 
 ## Contact
