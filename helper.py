@@ -32,6 +32,10 @@ def webscrapper(user_url):
     video_details[
         'video_url'] = f"https://www.youtube.com/watch?v={video_details.get('video_id')}"
 
-    print(video_details)
+    # print(video_details)
 
     return video_details
+
+def delete():
+
+    return
