@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
+import os 
+from os import listdir
 
 
 def webscrapper(user_url):
@@ -32,6 +34,12 @@ def webscrapper(user_url):
     video_details[
         'video_url'] = f"https://www.youtube.com/watch?v={video_details.get('video_id')}"
 
-    print(video_details)
+    # print(video_details)
 
     return video_details
+
+def delete():
+    folder_path = './YouTube-to-Audio/'
+    for file_name in listdir(folder_path):
+        if file_name.endswith('.mp3'):
+            os.remove(folder_path + file_name)
