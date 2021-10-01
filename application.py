@@ -15,6 +15,7 @@ def converter():
     user_url = ""
     youtube_url = ""
     video_details = {}
+    helper.delete()
 
     if request.method == "POST" and "youtube_link" in request.form:
         user_url = str(request.form.get("youtube_link")).strip()
