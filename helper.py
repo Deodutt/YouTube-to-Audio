@@ -2,11 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 import os 
 from os import listdir
-
+import mysql.connector
 
 def webscrapper(user_url):
     video_details = {}
-
     req = requests.get(user_url)
     soup = BeautifulSoup(req.content, 'html.parser')
 
@@ -39,7 +38,30 @@ def webscrapper(user_url):
     return video_details
 
 def delete():
-    folder_path = './YouTube-to-Audio/'
+    folder_path = './'
     for file_name in listdir(folder_path):
         if file_name.endswith('.mp3'):
             os.remove(folder_path + file_name)
+
+def database():
+    conn = mysql.connector.connect(user='root', password='', host='127.0.0.1')
+
+    #Creating a cursor object using the cursor() method
+    cursor = conn.cursor()
+
+    #Doping database MYDATABASE if already exists.
+    cursor.execute("DROP database IF EXISTS MyDatabase")
+
+    #Preparing query to create a database
+    sql = "CREATE database YouTube";
+
+    #Creating a database
+    cursor.execute(sql)
+
+    #Retrieving the list of databases
+    print("List of databases: ")
+    cursor.execute("SHOW DATABASES")
+    print(cursor.fetchall())
+
+    #Closing the connection
+    conn.close()
