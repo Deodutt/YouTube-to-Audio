@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
-import os 
+import os
 from os import listdir
 import mysql.connector
+
 
 def webscrapper(user_url):
     video_details = {}
@@ -37,31 +38,63 @@ def webscrapper(user_url):
 
     return video_details
 
+
 def delete():
     folder_path = './'
     for file_name in listdir(folder_path):
         if file_name.endswith('.mp3'):
             os.remove(folder_path + file_name)
 
-def database():
-    conn = mysql.connector.connect(user='root', password='', host='127.0.0.1')
 
-    #Creating a cursor object using the cursor() method
+def createDatabase():
+    conn = mysql.connector.connect(
+        user='root', password='kuralabs123', host='127.0.0.1')
+
+    # Creating a cursor obeject using cursor() method
     cursor = conn.cursor()
 
-    #Doping database MYDATABASE if already exists.
-    cursor.execute("DROP database IF EXISTS MyDatabase")
+    # Doping database YouTube if already exists.
+    cursor.execute("DROP database IF EXISTS YouTube")
 
-    #Preparing query to create a database
-    sql = "CREATE database YouTube";
+    # Creating a database and executing it.
+    cursor.execute("CREATE database YouTube")
 
-    #Creating a database
-    cursor.execute(sql)
-
-    #Retrieving the list of databases
+    # Retrieving the list of databases
     print("List of databases: ")
     cursor.execute("SHOW DATABASES")
     print(cursor.fetchall())
 
-    #Closing the connection
+    # cursor.execute("desc YouTube")
+    # myresult = cursor.fetchall()
+    # for row in myresult:
+    #     print(row)
+    conn.close()
+
+
+def database():
+    conn = mysql.connector.connect(
+        user='root', password='kuralabs123', host='127.0.0.1', database="YouTube")
+
+    # Creating a cursor object using the cursor() method
+    cursor = conn.cursor()
+
+    # Doping database YouTube already exists.
+    cursor.execute("SHOW TABLES")
+    conn.close()
+
+
+def addDatabase():
+    conn = mysql.connector.connect(
+        user='root', password='kuralabs123', host='127.0.0.1', database="YouTube")
+
+    # Creating a cursor object using the cursor() method
+    cursor = conn.cursor()
+
+    cursor.execute("CREATE TABLE details (video_id VARCHAR(11) PRIMARY KEY)")
+
+    query = """ALTER TABLE details
+            ADD COLUMN video_author text NOT NULL
+            """
+    cursor.execute(query)
+
     conn.close()
