@@ -17,8 +17,13 @@ def converter():
     video_details = {}
     helper.delete()
     helper.createDatabase()
-    # helper.database()
+    print(f"Created successfully")
+    helper.database()
+    print(f"Connected scueesfully")
+
     helper.addDatabase()
+    print(f"added succesfully")
+    helper.fetchDatabase()
 
     if request.method == "POST" and "youtube_link" in request.form:
         user_url = str(request.form.get("youtube_link")).strip()
