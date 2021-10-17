@@ -15,7 +15,7 @@ def converter():
     user_url = ""
     youtube_url = ""
     video_details = {}
-    # helper.delete()
+    helper.delete()
     helper.createDatabase()
     # helper.database()
     helper.addDatabase()
