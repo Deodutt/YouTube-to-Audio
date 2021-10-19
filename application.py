@@ -4,6 +4,7 @@ from werkzeug.utils import secure_filename
 import helper
 import logging
 from pytube import YouTube
+import youtube_db
 
 application = app = Flask(__name__)
 
@@ -16,14 +17,21 @@ def converter():
     youtube_url = ""
     video_details = {}
     helper.delete()
-    helper.createDatabase()
-    print(f"Created successfully")
-    helper.database()
-    print(f"Connected scueesfully")
 
-    helper.addDatabase()
-    print(f"added succesfully")
-    helper.fetchDatabase()
+    youtube_db.create_database()
+    print(f"Created successfully")
+
+    # Adding data to the database
+    youtube_db.addDatabase()
+
+    # Fetch all the databases
+    youtube_db.fetch_all_databases()
+
+    # Fetching all the tables in the database
+    youtube_db.fetch_all_tables()
+
+    # Fetching all the rows from the table
+    youtube_db.fetch_all_rows()
 
     if request.method == "POST" and "youtube_link" in request.form:
         user_url = str(request.form.get("youtube_link")).strip()
