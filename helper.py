@@ -39,7 +39,7 @@ def webscrapper(user_url):
     return video_details
 
 def delete():
-    folder_path = './YouTube-to-Audio/'
+    folder_path = './'
     for file_name in listdir(folder_path):
         if file_name.endswith('.mp3'):
             os.remove(folder_path + file_name)
