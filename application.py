@@ -36,14 +36,16 @@ def download():
             download_path = (
                 YouTube(youtube_url)
                 .streams.get_audio_only()
-                .download(filename=f"{video_details.get('video_title')}.mp3")
+                .download(filename=f"{video_details.get('video_title')}.m4a")
             )
+            print(f"{video_details.get('video_author')} - {video_details.get('video_title')}")
         except:
             download_path = (
                 YouTube(youtube_url)
                 .streams.get_audio_only()
-                .download(filename=f"{video_details.get('video_id')}.mp3")
+                .download(filename=f"{video_details.get('video_id')}.m4a")
             )
+            print(f"{video_details.get('video_author')} - {video_details.get('video_title')}")
 
         fname = download_path.split("//")[-1]
 
