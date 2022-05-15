@@ -4,4 +4,5 @@ __pycache__/
 README.md
 LICENSE
 *.mp3
+*.m4a
 test/
