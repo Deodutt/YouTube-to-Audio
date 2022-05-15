@@ -41,5 +41,5 @@ def webscrapper(user_url):
 def delete():
     folder_path = './'
     for file_name in listdir(folder_path):
-        if file_name.endswith('.mp3'):
+        if file_name.endswith('.mp3') or file_name.endswith('.m4a'):
             os.remove(folder_path + file_name)
