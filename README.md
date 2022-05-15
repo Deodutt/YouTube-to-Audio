@@ -47,7 +47,7 @@ To get a local copy up and running follow these simple steps.
 
    ```sh
    git clone https://github.com/Deodutt/YouTube-to-Audio.git
-   cd .\YouTube-to-Audio\
+   cd YouTube-to-Audio\
    ```
 
 2. Create a virtual environment and activate it. (Windows command)
@@ -60,6 +60,7 @@ To get a local copy up and running follow these simple steps.
 3. Install the required dependencies
 
    ```sh
+   pip3 install git+https://github.com/pytube/pytube
    pip3 install -r requirements.txt
    ```
 
